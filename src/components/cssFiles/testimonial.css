@@ -1,0 +1,31 @@
+.scroll-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.scroll-track {
+  display: flex;
+  gap: 1.5rem;
+  animation: scrollLeft 30s linear infinite;
+  width: max-content;
+}
+
+.testimonial-card {
+  min-width: 300px;
+  max-width: 300px;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
