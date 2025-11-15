@@ -5,23 +5,24 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   server: {
-    port: 5173,           // default dev server port
-    open: true,           // auto-open browser
-    strictPort: true,     // fail if port is already in use
+    port: 5173,
+    open: true,
+    strictPort: true,
   },
   resolve: {
     alias: {
-      '@': '/src',        // allows imports like "@/components/Button"
+      '@': '/src',
     },
   },
   optimizeDeps: {
     esbuildOptions: {
-      target: 'esnext',   // ensure modern JS support in deps
+      target: 'esnext',
     },
   },
   build: {
-    target: 'esnext',     // output modern JS
-    outDir: 'dist',       // build output folder
-    sourcemap: true,      // helpful for debugging
+    target: 'esnext',
+    outDir: 'dist',
+    // Disable production sourcemaps to avoid huge .map files and sourcemap warnings
+    sourcemap: false,
   },
 })
